@@ -93,16 +93,11 @@ class Board {
       }
     }
     
-    //listening for a change of turn event
+    // listening for a change of turn event
     for (int y = 0; y < size - 1; y++) {
       for (int x = 0; x < size - 1; x++) {
-        if (boxes[x][y].claimed) {
-          numBoxes++;
-          println (numBoxes);
-        }
+        boxes[x][y].listen();
       }
     }
-
   }
-  
-}
+} 

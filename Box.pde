@@ -12,23 +12,22 @@ class Box {
   }
   
   void display () {
-    if (player1.turn) {
-      name = player1.name;
-    } else {
-      name = player2.name;
-    }
-   
+ 
     textSize(32);
-
-    if (top.on && bottom.on && left.on && right.on) {
-      claimed = true;
-      println("test");
+    if (claimed) {
       text(name, right.a.x - 32, bottom.a.y - 32);
     }
   }
   
-  //void switchTurns () {
+  void listen () {
+    if (player1.turn) {
+      name = player1.name;
+      } else {
+        name = player2.name;
+     }
     
-    
-
+   if (top.on && bottom.on && left.on && right.on) {
+      claimed = true;
+    }
+  }
 }

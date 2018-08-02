@@ -5,12 +5,13 @@
 Board board;
 Edge edge;
 Player player1, player2;
-int numBoxes;
+int boxesCounter;
+Box[][] boxes;
 
 void setup () {
   size (640,640);
   board = new Board (5);
-  numBoxes = 0;
+  //numBoxes = 0;
   player1 = new Player("David");
   player2 = new Player("Adam");
   player1.turn = true;
@@ -18,9 +19,9 @@ void setup () {
 
 void draw() {
     board.display();
-//    board.countBoxes();
 }
 
-void mousePressed(){
+void mousePressed() {
   board.listen();
-}
+}        
+  
