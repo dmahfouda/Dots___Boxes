@@ -61,7 +61,21 @@ class Board {
  
   }
   
-  //boolean isBetween(){
-  //  if (mouseX <
+  //listen to mouse-click event
+  void listen(){
+    //listening for clicks on horizontal edges
+    for (int y = 0; y < size; y++) {
+      for (int x = 0; x < size -1; x++) {
+        horizontalEdges[x][y].isBetween();
+      }
+    }
+    
+    //listening for clicks on vertical edges
+    for (int y = 0; y < size - 1; y++) {
+      for (int x = 0; x < size; x++) {
+        verticalEdges[x][y].isBetween();
+      }
+    }
+  }
   
 }

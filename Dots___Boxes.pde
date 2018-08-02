@@ -7,21 +7,13 @@ Edge edge;
 void setup () {
   size (640,640);
   board = new Board (5);
-  board.display();
 }
 
 void draw() {
+    board.display();
 }
 
 void mousePressed(){
-  print(mouseX);
+  println(mouseX, mouseY);
+  board.listen();
 }
-    
-    
-
-//The first thing I want to do is initialize the arrays that
-//will store all of state data for the game.
-
-//The first array is just an array of dots that sets creates
-//the board of play. I'm not sure if the board of play needs to 
-//have any intelligence built in
