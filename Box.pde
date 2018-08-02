@@ -15,26 +15,20 @@ class Box {
   
   void display () {
     if (claimed) {
-      text(player1.name, right.a.x - 32, bottom.a.y - 32);
+      text(name, right.a.x - 32, bottom.a.y - 32);
     }
   }
   
   //function to change box state
   void stateUpdate () {
-    
-    //if (player1.turn) {
-    //  name = player1.name;
-    //  } else {
-    //    name = player2.name;
-    // }
-    
    if (top.on && bottom.on && left.on && right.on && !boxCounted) {
       claimed = true;
       boxCounted = true;
-      boxesCounter++;
-      println(boxesCounter);
+      if (player1.turn) {
+        name = player1.name;
+      } else {
+        name = player2.name;
+      }
     }
-    
-    
-  }
+  }     
 }

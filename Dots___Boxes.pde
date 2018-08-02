@@ -8,6 +8,7 @@ int boxesCounter;
 
 void setup () {
   size (640,640);
+  background(64);
   board = new Board (5);
   boxesCounter = 0;
   player1 = new Player("David");
@@ -21,5 +22,14 @@ void draw() {
 
 void mousePressed() {
   board.listen();
-}        
-  
+}
+
+void changeTurns(){
+  if (player1.turn) {
+    player1.turn = false;
+    player2.turn = true;
+  } else {
+    player1.turn = true;
+    player2.turn = false;
+  }
+}

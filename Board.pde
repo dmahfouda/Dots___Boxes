@@ -46,7 +46,7 @@ class Board {
   }
   
   void display(){
-   
+    background(64);
     //display dots
     for (int y = 0; y < size; y++) {
       for (int x = 0; x < size; x++) {
@@ -61,20 +61,26 @@ class Board {
       }
     }
  
-   //display vertical edges
-   for (int y = 0; y < size-1; y++) {
-     for (int x = 0; x < size; x++) {
-       verticalEdges[x][y].display();
+     //display vertical edges
+     for (int y = 0; y < size-1; y++) {
+       for (int x = 0; x < size; x++) {
+         verticalEdges[x][y].display();
+       }
      }
-   }
    
-   //display boxes
-   for (int y = 0; y < size-1; y++) {
-     for (int x = 0; x < size - 1; x++) {
-       boxes[x][y].display();
+     //display boxes
+     for (int y = 0; y < size-1; y++) {
+       for (int x = 0; x < size - 1; x++) {
+         boxes[x][y].display();
+       }
      }
-   }
  
+    //display name of player whose turn it is
+    if (player1.turn){
+      text(player1.name,10,40);
+    }else{
+      text(player2.name,10,40);
+    }
   }
   
   //listen to mouse-click event

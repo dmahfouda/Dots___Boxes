@@ -23,11 +23,13 @@ class Edge {
     //test for proximate clicking on horizontal edges
     if (mouseX > a.x && mouseX < b.x && (mouseY > a.y-3 && mouseY < a.y+3)) {
       on = true;
+      changeTurns();
     }
     
     //test for proximate clicking on vertical edges
     if ((mouseX > a.x-3 && mouseX <a.x+3) && mouseY > a.y & mouseY < b.y) {
       on= true;
+      changeTurns();
     }
     
   }
