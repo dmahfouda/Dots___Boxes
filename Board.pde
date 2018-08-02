@@ -77,9 +77,9 @@ class Board {
  
     //display name of player whose turn it is
     if (player1.turn){
-      text(player1.name,10,40);
+      text(player1.name+"'s turn",10,40);
     }else{
-      text(player2.name,10,40);
+      text(player2.name+"'s turn",10,40);
     }
   }
   

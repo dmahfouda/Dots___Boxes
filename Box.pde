@@ -24,6 +24,9 @@ class Box {
    if (top.on && bottom.on && left.on && right.on && !boxCounted) {
       claimed = true;
       boxCounted = true;
+      changeTurns();
+      switchTurns = false;
+
       if (player1.turn) {
         name = player1.name;
       } else {

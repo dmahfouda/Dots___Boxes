@@ -6,7 +6,7 @@ class Edge {
   Edge (Dot aa, Dot bb) {
     a = aa;
     b = bb;
-    clickableWidth = 5;
+    clickableWidth = 8;
     on = false;
   }
   
@@ -21,18 +21,18 @@ class Edge {
   
   void isBetween () {
     //test for proximate clicking on horizontal edges
-    if (mouseX > a.x && mouseX < b.x && (mouseY > a.y-3 && mouseY < a.y+3)) {
+    if (mouseX > a.x && mouseX < b.x && (mouseY > a.y-5 && mouseY < a.y+5)) {
       on = true;
+      switchTurns = true;
       changeTurns();
     }
     
     //test for proximate clicking on vertical edges
-    if ((mouseX > a.x-3 && mouseX <a.x+3) && mouseY > a.y & mouseY < b.y) {
-      on= true;
+    if ((mouseX > a.x-5 && mouseX <a.x+5) && mouseY > a.y & mouseY < b.y) {
+      on = true;
+      switchTurns = true;
       changeTurns();
     }
     
   }
-
-//  void (
 }
