@@ -96,7 +96,7 @@ class Board {
     // listening for a change of turn event
     for (int y = 0; y < size - 1; y++) {
       for (int x = 0; x < size - 1; x++) {
-        boxes[x][y].listen();
+        boxes[x][y].stateUpdate();
       }
     }
   }
