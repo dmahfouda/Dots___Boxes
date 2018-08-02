@@ -2,6 +2,7 @@ class Board {
   int size;
   Dot[][] dots;
   Edge[][] horizontalEdges, verticalEdges;
+  Box[][] boxes;
   
   //Constructor  
   Board (int s) {
@@ -34,6 +35,15 @@ class Board {
       }
     }
     
+    boxes = new Box [size-1][size-1];
+    
+    //create boxes
+    for (int y = 0; y < size - 1; y++) {
+      for (int x = 0; x < size -1; x++) {
+        boxes[x][y] = new Box (horizontalEdges[x][y], horizontalEdges[x][y+1], verticalEdges[x][y], verticalEdges[x+1][y]);
+      }
+    }
+    
   }
   
   void display(){
@@ -56,6 +66,13 @@ class Board {
    for (int y = 0; y < size-1; y++) {
      for (int x = 0; x < size; x++) {
        verticalEdges[x][y].display();
+     }
+   }
+   
+   //display boxes
+   for (int y = 0; y < size-1; y++) {
+     for (int x = 0; x < size - 1; x++) {
+       boxes[x][y].display();
      }
    }
  
