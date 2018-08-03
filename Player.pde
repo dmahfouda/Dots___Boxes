@@ -6,10 +6,4 @@ class Player {
     name = n;
     turn = false;
   }
-  
-  //void assessTurnChange () {
-  //  if (changeTurns) {
-  //  }
-  //}
-  
 }

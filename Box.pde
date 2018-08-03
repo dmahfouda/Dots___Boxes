@@ -1,7 +1,7 @@
 class Box {
   String name;
   Edge top, bottom, left, right;
-  boolean claimed, boxCounted;
+  boolean claimed;
   
   Box (Edge t, Edge b, Edge l, Edge r) {
     top = t;
@@ -9,24 +9,22 @@ class Box {
     left = l;
     right = r;
     claimed = false;
-    boxCounted = false;
-    textSize(32);
+    textSize(20);
   }
   
   void display () {
     if (claimed) {
-      text(name, right.a.x - 32, bottom.a.y - 32);
+      text(name, right.start.x - 120, bottom.start.y - 100);
     }
   }
   
-  //function to change box state
-  void stateUpdate () {
-   if (top.on && bottom.on && left.on && right.on && !boxCounted) {
+  //function to assess when and new box has been made and
+  //assign in to a player
+  void assignNew () {
+   if (top.on && bottom.on && left.on && right.on && !claimed) {
       claimed = true;
-      boxCounted = true;
+      //when a box is claimed, turns change again (so that claiming player keeps is or her turn
       changeTurns();
-      switchTurns = false;
-
       if (player1.turn) {
         name = player1.name;
       } else {

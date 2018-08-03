@@ -1,11 +1,11 @@
 class Edge {
-  Dot a,b;
+  Dot start,end;
   int clickableWidth;
   boolean on;
   
-  Edge (Dot aa, Dot bb) {
-    a = aa;
-    b = bb;
+  Edge (Dot s, Dot e) {
+    start = s;
+    end = e;
     clickableWidth = 8;
     on = false;
   }
@@ -16,21 +16,19 @@ class Edge {
     } else {
       stroke (0);
     }
-    line (a.x, a.y, b.x, b.y);
+    line (start.x, start.y, end.x, end.y);
   }
   
   void isBetween () {
     //test for proximate clicking on horizontal edges
-    if (mouseX > a.x && mouseX < b.x && (mouseY > a.y-5 && mouseY < a.y+5)) {
+    if (mouseX > start.x && mouseX < end.x && (mouseY > start.y-clickableWidth && mouseY < start.y+clickableWidth)) {
       on = true;
-      switchTurns = true;
       changeTurns();
     }
     
     //test for proximate clicking on vertical edges
-    if ((mouseX > a.x-5 && mouseX <a.x+5) && mouseY > a.y & mouseY < b.y) {
+    if ((mouseX > start.x-clickableWidth && mouseX <start.x+clickableWidth) && mouseY > start.y & mouseY < end.y) {
       on = true;
-      switchTurns = true;
       changeTurns();
     }
     
